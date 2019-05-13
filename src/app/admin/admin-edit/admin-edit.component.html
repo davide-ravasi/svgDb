@@ -1,0 +1,45 @@
+<div class="col-md-8">
+    <form [formGroup]="myform" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input 
+          type="text" 
+          class="form-control" 
+          id="name" 
+          placeholder="Name"
+          formControlName="name">
+          <p *ngIf="myform.controls.name.invalid && myform.controls.name.touched">Name is required</p>
+        </div>
+        <div class="form-group">
+          <label for="image">Image path</label>
+          <input 
+          type="text" 
+          class="form-control" 
+          id="image" 
+          placeholder="Image"
+          formControlName="image">
+          <p *ngIf="myform.controls.image.invalid && myform.controls.image.touched">Image path is required</p>
+        </div>
+<!--         <div class="form-group">
+          <label for="exampleInputFile">File input</label>
+          <input type="file" id="exampleInputFile">
+          <p class="help-block">Example block-level help text here.</p>
+        </div> -->
+<!--         <div class="checkbox">
+          <label>
+            <input type="checkbox"> Check me out
+          </label>
+        </div> -->
+        <div class="form-group">
+            <label for="tags">Tags</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="tags" 
+            placeholder="Tags separated by comma"
+            formControlName="tags">
+            <p *ngIf="myform.controls.tags.invalid && myform.controls.tags.touched">Tags are required</p>
+          </div>        
+        <button type="submit" class="btn btn-default" [disabled]="!myform.valid">Submit</button>
+      </form>
+</div>

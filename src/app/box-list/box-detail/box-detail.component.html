@@ -1,0 +1,14 @@
+<div class="media">
+   <div class="col-md-12">
+    <a [routerLink]="['/detail', detailId]">
+      <img class="media-object" [src]="detailBox.image" alt="{{ detailBox.name }}">
+    </a>
+  </div>
+  <div class="col-md-12">
+    <h4 class="media-heading">{{ detailBox.name }}</h4>
+    <div class="row">
+      <span class="badge" *ngFor="let tag of detailBox.tags">{{ tag.tag }}</span>
+      <br/><br/><br/><br/><br/><br/>
+    </div>
+  </div>
+</div>

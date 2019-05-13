@@ -1,0 +1,16 @@
+<div class="row">
+  <button class="btn btn-primary pull-right" (click)="onAddBox()">New</button>
+</div>
+<div class="row" *ngFor="let box of boxList;let i=index; let odd=odd; let even=even" [ngClass]="{odd: odd, even: even}">
+    <div class="col-md-4">
+      <a [routerLink]="['/admin','edit', i]">
+        <img class="img-responsive" [src]="box.image" alt="{{ box.name }}">
+      </a>
+    </div>
+    <div class="col-md-8">
+      <h4 class="">{{ box.name }}</h4>
+      <div class="row">
+        <span class="badge" *ngFor="let tag of box.tags">{{ tag.tag }}</span>
+      </div>
+    </div>
+  </div>
